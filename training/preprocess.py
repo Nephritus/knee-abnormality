@@ -1,8 +1,8 @@
 """DICOM Study -> fixed 44-slice uint8 stack, matching dreaddevelopment/knee-raptor-corpus.
 
-Adapted from dreaddevelopment's 64-slice inference preprocessing, whose comments state the
-44-slice corpus uses the same pipeline with these slot sizes. verify_preprocess.py checks the
-match against the corpus itself.
+Adapted from dreaddevelopment's 64-slice inference preprocessing. The 44-slice corpus uses the
+older 15-85% slice span rather than that notebook's 6-94%; with that span this reproduces the
+corpus stacks exactly (verify_preprocess.py: zero pixel difference on every slot).
 """
 import glob
 
@@ -10,7 +10,7 @@ import numpy as np
 
 IMG = 336
 CROP_MM = 140.0
-SPAN = (0.06, 0.94)
+SPAN = (0.15, 0.85)
 PCT = (2.0, 98.0)
 # (plane, preferred Fluid_Sensitive or -1 for no preference, slices)
 SLOTS = [("Sagittal", 1, 12), ("Sagittal", 0, 10), ("Coronal", 1, 8),
