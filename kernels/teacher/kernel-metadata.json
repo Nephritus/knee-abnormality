@@ -1,0 +1,16 @@
+{
+  "id": "yigitkahraman/knee-teacher-folds",
+  "title": "knee-teacher-folds",
+  "code_file": "run_teacher.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": ["yigitkahraman/knee-train-kit", "dreaddevelopment/knee-raptor-corpus", "dreaddevelopment/knee-raptor-corpus-ext"],
+  "competition_sources": ["rsna-knee-abnormality-detection"],
+  "kernel_sources": [],
+  "model_sources": []
+}
