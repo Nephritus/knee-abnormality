@@ -1,0 +1,15 @@
+{
+  "id": "yigitkahraman/knee-verify-preprocess",
+  "title": "knee-verify-preprocess",
+  "code_file": "verify_preprocess.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "dataset_sources": ["yigitkahraman/knee-train-kit", "dreaddevelopment/knee-raptor-corpus", "dreaddevelopment/knee-raptor-corpus-ext"],
+  "competition_sources": ["rsna-knee-abnormality-detection"],
+  "kernel_sources": [],
+  "model_sources": []
+}
