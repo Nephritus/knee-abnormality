@@ -1,0 +1,16 @@
+{
+  "id": "yigitkahraman/knee-student-submission",
+  "title": "knee-student-submission",
+  "code_file": "student_submission.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": ["yigitkahraman/knee-train-kit"],
+  "competition_sources": ["rsna-knee-abnormality-detection"],
+  "kernel_sources": ["yigitkahraman/knee-teacher-folds"],
+  "model_sources": []
+}
