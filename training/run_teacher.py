@@ -11,9 +11,10 @@ import time
 from pathlib import Path
 
 # One job per GPU. fold=None trains on every non-gold Study (no held-out predictions).
+# History: session 1 = teacher folds 0-1; session 2 = teacher fold 2 + report_full.
 JOBS = [
-    {"tag": "teacher_f2", "fold": 2, "labels": "labels_report.parquet"},
-    {"tag": "report_full", "fold": None, "labels": "labels_report.parquet"},
+    {"tag": "student_s42", "fold": None, "labels": "labels_student.parquet", "seed": 42},
+    {"tag": "student_s7", "fold": None, "labels": "labels_student.parquet", "seed": 7},
 ]
 SMOKE = False
 N_FOLDS = 3
@@ -48,7 +49,8 @@ def cmd(arch, kit, job, extra=()):
              ["--folds", str(N_FOLDS), "--fold", str(job["fold"]), "--fold_file", str(kit / "folds.json")])
     return [sys.executable, str(WORK / "train_knee.py"), "--arch", arch, "--res", str(RES),
             "--epochs", str(EPOCHS), "--bs", "8", "--k", "12", "--k_eval", "24", "--grad_ckpt",
-            "--workers", "2", "--labels", str(kit / job["labels"]), *folds, "--tag", job["tag"], *extra]
+            "--workers", "2", "--labels", str(kit / job["labels"]), *folds, "--tag", job["tag"],
+            "--seed", str(job.get("seed", 42)), *extra]
 
 
 def main():
